@@ -1,54 +1,39 @@
-import json
+#!/usr/bin/env python3
+import json, datetime, hashlib
 from pathlib import Path
-from datetime import datetime, timezone
-
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "docs" / "conferences.json"
-OUT = ROOT / "docs" / "ortho-abstract-deadlines.ics"
 
 def esc(s):
-    return str(s or "").replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
+    return (s or "").replace("\\","\\\\").replace(";","\\;").replace(",","\\,").replace("\n","\\n")
 
-def dtstamp():
-    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-
-lines = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//Ortho Deadline Auto//EN",
-    "CALSCALE:GREGORIAN",
-    "METHOD:PUBLISH",
-    "X-WR-CALNAME:Orthopaedic Abstract Deadlines",
-    "X-WR-TIMEZONE:America/New_York",
-]
-for c in json.loads(DATA.read_text()):
-    date = c.get("deadline") or c.get("known_deadline")
-    if not date:
-        continue
-    ymd = date.replace("-", "")
-    desc = "\n".join([
-        c.get("deadline_label", "Abstract deadline"),
-        "Specialty: " + ", ".join(c.get("specialty", [])),
-        "Region: " + c.get("region", ""),
-        "Tags: " + ", ".join(c.get("tags", [])),
-        "Acceptance strategy: " + c.get("acceptance_strategy", ""),
-        "Indexed/publication note: " + c.get("indexed", ""),
-        "Source: " + c.get("source_url", ""),
-        "Last checked: " + c.get("last_checked", ""),
-    ])
-    uid = f"{c['id']}-{ymd}@ortho-deadline-auto"
+rows=json.loads(Path("conferences.json").read_text())
+lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Ortho Deadline Calendar//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH"]
+now=datetime.datetime.utcnow().strftime("%Y%m%dT%H%M%SZ")
+for r in rows:
+    d=r.get("known_deadline")
+    if not d: continue
+    uid=hashlib.md5((r.get("id","")+d).encode()).hexdigest()+"@ortho-deadline-calendar"
+    start=d.replace("-","")
+    dt=datetime.date.fromisoformat(d)+datetime.timedelta(days=1)
+    end=dt.strftime("%Y%m%d")
+    desc=f"{r.get('deadline_label','Abstract deadline')}\\nSubmission: {r.get('submission_url') or r.get('source_url','')}\\nOfficial source: {r.get('source_url','')}\\nStatus: {r.get('status','')}"
     lines += [
         "BEGIN:VEVENT",
-        f"UID:{esc(uid)}",
-        f"DTSTAMP:{dtstamp()}",
-        f"DTSTART;VALUE=DATE:{ymd}",
-        f"SUMMARY:{esc('Abstract deadline: ' + c['name'])}",
+        f"UID:{uid}",
+        f"DTSTAMP:{now}",
+        f"DTSTART;VALUE=DATE:{start}",
+        f"DTEND;VALUE=DATE:{end}",
+        f"SUMMARY:{esc('Abstract deadline: ' + r.get('name','Conference'))}",
+        f"LOCATION:{esc(r.get('location',''))}",
         f"DESCRIPTION:{esc(desc)}",
-        f"URL:{esc(c.get('source_url',''))}",
+        "BEGIN:VALARM",
+        "TRIGGER:-P7D",
+        "ACTION:DISPLAY",
+        f"DESCRIPTION:{esc('7-day reminder: ' + r.get('name','Conference') + ' abstract deadline')}",
+        "END:VALARM",
+        "END:VEVENT"
     ]
-    for days in (30, 14, 7):
-        lines += ["BEGIN:VALARM", f"TRIGGER:-P{days}D", "ACTION:DISPLAY", f"DESCRIPTION:{esc(str(days)+' days until abstract deadline')}", "END:VALARM"]
-    lines.append("END:VEVENT")
 lines.append("END:VCALENDAR")
-OUT.write_text("\r\n".join(lines) + "\r\n")
-print(f"Wrote {OUT}")
+Path("docs").mkdir(exist_ok=True)
+Path("calendar.ics").write_text("\n".join(lines)+"\n")
+Path("docs/calendar.ics").write_text("\n".join(lines)+"\n")
+
