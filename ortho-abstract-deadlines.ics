@@ -1,0 +1,169 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ortho Deadline Auto//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Orthopaedic Abstract Deadlines
+X-WR-TIMEZONE:America/New_York
+BEGIN:VEVENT
+UID:aaos-annual-20260601@ortho-deadline-auto
+DTSTAMP:20260524T000711Z
+DTSTART;VALUE=DATE:20260601
+SUMMARY:Abstract deadline: AAOS Annual Meeting
+DESCRIPTION:Papers\, posters\, ePosters due\nSpecialty: General\, All subspecialties\nRegion: United States\nTags: indexed-friendly\, large meeting\, competitive\nAcceptance strategy: Poster/ePoster usually more attainable than podium.\nIndexed/publication note: Publication depends on downstream manuscript\; abstracts are conference proceedings\, not guaranteed PubMed indexing.\nSource: https://www.aaos.org/annual/explore-the-program/abstracts-applications/\nLast checked: 2026-05-24T00:06:49.479179+00:00
+URL:https://www.aaos.org/annual/explore-the-program/abstracts-applications/
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:30 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:14 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:7 days until abstract deadline
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ors-annual-20260831@ortho-deadline-auto
+DTSTAMP:20260524T000711Z
+DTSTART;VALUE=DATE:20260831
+SUMMARY:Abstract deadline: Orthopaedic Research Society Annual Meeting
+DESCRIPTION:Regular abstract submission closes\; late-breaking window Oct 12–Nov 9\, 2026\nSpecialty: Basic science\, Biomechanics\, Translational research\nRegion: United States\nTags: research\, higher-volume\, poster-friendly\nAcceptance strategy: High-volume posters make this a practical target for research projects.\nIndexed/publication note: Excellent research visibility\; PubMed indexing requires full manuscript publication.\nSource: https://www.ors.org/futureannualmeetings/\nLast checked: 2026-05-24T00:06:49.479179+00:00
+URL:https://www.ors.org/futureannualmeetings/
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:30 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:14 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:7 days until abstract deadline
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aahs-annual-20260713@ortho-deadline-auto
+DTSTAMP:20260524T000711Z
+DTSTART;VALUE=DATE:20260713
+SUMMARY:Abstract deadline: American Association for Hand Surgery Annual Meeting
+DESCRIPTION:Abstract submission deadline\nSpecialty: Hand\, Upper extremity\nRegion: United States\nTags: hand\, poster-friendly\nAcceptance strategy: Specialty meeting with paper and poster formats\; likely more approachable than broad national podium slots.\nIndexed/publication note: Publication depends on subsequent manuscript submission.\nSource: https://meeting.handsurgery.org/Abstract-Submission/\nLast checked: 2026-05-24T00:06:49.479179+00:00
+URL:https://meeting.handsurgery.org/Abstract-Submission/
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:30 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:14 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:7 days until abstract deadline
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:srs-regional-2027-20260630@ortho-deadline-auto
+DTSTAMP:20260524T000711Z
+DTSTART;VALUE=DATE:20260630
+SUMMARY:Abstract deadline: Scoliosis Research Society Regional Scientific Meeting
+DESCRIPTION:Abstract submission closes 11:59pm ART\nSpecialty: Spine\, Deformity\nRegion: International\nTags: spine\, international\, competitive\nAcceptance strategy: Regional focus may help if author team aligns with region requirements.\nIndexed/publication note: Publication depends on downstream manuscript\; meeting abstracts are not a substitute for indexed publication.\nSource: https://www.srs.org/Meetings-Conferences/Regional-Scientific-Meeting/RSM-2027\nLast checked: 2026-05-24T00:06:49.479179+00:00
+URL:https://www.srs.org/Meetings-Conferences/Regional-Scientific-Meeting/RSM-2027
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:30 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:14 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:7 days until abstract deadline
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:somos-annual-20260601@ortho-deadline-auto
+DTSTAMP:20260524T000711Z
+DTSTART;VALUE=DATE:20260601
+SUMMARY:Abstract deadline: Society of Military Orthopaedic Surgeons Annual Meeting
+DESCRIPTION:Abstract submission deadline\nSpecialty: Military orthopaedics\, General\nRegion: United States\nTags: resident-friendly\, higher-acceptance\nAcceptance strategy: Good target for resident/fellow and military-relevant projects.\nIndexed/publication note: Publication depends on subsequent manuscript submission.\nSource: https://www.somos.org/abstract-submission\nLast checked: 2026-05-24T00:06:49.479179+00:00
+URL:https://www.somos.org/abstract-submission
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:30 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:14 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:7 days until abstract deadline
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aoa-cord-2027-20260701@ortho-deadline-auto
+DTSTAMP:20260524T000711Z
+DTSTART;VALUE=DATE:20260701
+SUMMARY:Abstract deadline: AOA Annual Leadership Meeting / Summer CORD Conference
+DESCRIPTION:Abstract and poster submission window closes\nSpecialty: Academic orthopaedics\, Education\, Leadership\nRegion: United States\nTags: education\, resident-friendly\nAcceptance strategy: Good fit for education\, workforce\, and residency projects.\nIndexed/publication note: Best for education/leadership dissemination\; full manuscript needed for indexing.\nSource: https://www.aoassn.org/abstract-symposium-submissions/\nLast checked: 2026-05-24T00:06:49.479179+00:00
+URL:https://www.aoassn.org/abstract-symposium-submissions/
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:30 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:14 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:7 days until abstract deadline
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:lsrs-annual-20270104@ortho-deadline-auto
+DTSTAMP:20260524T000711Z
+DTSTART;VALUE=DATE:20270104
+SUMMARY:Abstract deadline: Lumbar Spine Research Society Annual Meeting
+DESCRIPTION:Call for abstracts closes\nSpecialty: Spine\, Lumbar spine\nRegion: United States\nTags: spine\, targeted\nAcceptance strategy: Highly targeted lumbar spine audience\; poster format may be approachable.\nIndexed/publication note: Publication depends on downstream manuscript submission.\nSource: https://www.lsrs.org/news-updates\nLast checked: 2026-05-24T00:06:49.479179+00:00
+URL:https://www.lsrs.org/news-updates
+BEGIN:VALARM
+TRIGGER:-P30D
+ACTION:DISPLAY
+DESCRIPTION:30 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P14D
+ACTION:DISPLAY
+DESCRIPTION:14 days until abstract deadline
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-P7D
+ACTION:DISPLAY
+DESCRIPTION:7 days until abstract deadline
+END:VALARM
+END:VEVENT
+END:VCALENDAR
